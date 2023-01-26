@@ -2,6 +2,7 @@ import * as React from 'react'
 import { Link } from 'gatsby'
 
 import Input from '../Input'
+import Button from '../Button'
 
 import { useSignInForm } from './useSignInForm'
 
@@ -29,7 +30,7 @@ function SignInForm() {
         disabled={pending}
         error={errors.password}
         id="password"
-        label="Password!"
+        label="Password"
         name="password"
         onFocus={onFocus}
         required
@@ -38,7 +39,11 @@ function SignInForm() {
 
       <div className={styles.gap} />
 
-      <button className={styles.submitButton} type="submit" disabled={pending}>Sign in</button>
+      <Button
+        disabled={pending}
+        label="Sign in"
+        type="submit"
+      />
 
       <Link to="signup" className={styles.authModeSwitchLink}>
         <span>Create account</span>

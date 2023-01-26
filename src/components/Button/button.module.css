@@ -1,0 +1,36 @@
+.button {
+    position: relative;
+    min-width: var(--space-6);
+    min-height: var(--space-5);
+    padding: var(--space-2);
+    font-size: var(--font-sm);
+    background-color: var(--color-primary);
+    color: var(--palette-white);
+    border-radius: 8px;
+}
+
+.button:focus {
+    box-shadow: 0 0 2px 2px #999
+}
+
+.button:disabled {
+    background-color: var(--palette-gray);
+}
+
+.button:disabled:after {
+    content: "\065C";
+    position: absolute;
+    right: var(--space-3);
+    font-size: var(--font-lg);
+    line-height: 100%;
+    animation: fa-spin 2s linear infinite;
+}
+
+@keyframes fa-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(359deg);
+    }
+}

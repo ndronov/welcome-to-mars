@@ -1,31 +1,3 @@
-.submit-button {
-  position: relative;
-  min-height: var(--space-5);
-  min-width: var(--space-6);
-  padding: var(--space-2);
-  border-radius: 8px;
-  font-size: var(--font-sm);
-  background-color: var(--color-primary);
-  color: var(--palette-white);
-}
-
-.submit-button:focus {
-  box-shadow: 0 0 2px 2px #999
-}
-
-.submit-button:disabled {
-  background-color: var(--palette-gray);
-}
-
-.submit-button:disabled:after {
-  content: "\065C";
-  position: absolute;
-  right: var(--space-3);
-  font-size: var(--font-lg);
-  line-height: 100%;
-  animation: fa-spin 2s linear infinite;
-}
-
 .auth-form {
   min-height: 450px;
   padding: 50px 30px 30px;
@@ -62,13 +34,4 @@
 
 .auth-form .auth-mode-switch-link:focus {
   box-shadow: 0 0 2px 2px #999
-}
-
-@keyframes fa-spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(359deg);
-  }
 }
