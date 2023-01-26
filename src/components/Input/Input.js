@@ -4,6 +4,7 @@ import * as styles from './input.module.css'
 
 function Input(props) {
   const {
+    autoComplete,
     disabled,
     error,
     id,
@@ -19,6 +20,7 @@ function Input(props) {
         {label}
 
         <input
+          autoComplete={autoComplete}
           className={styles.input}
           disabled={disabled}
           id={id}

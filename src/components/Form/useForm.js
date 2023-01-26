@@ -1,13 +1,9 @@
 import { useCallback, useState } from 'react'
 
-import { SignInAPI } from '../../api/SignInAPI'
-import { getSubmittedFormData } from '../../helpers/forms'
+import { getSubmittedFormData, defaultFormValidators } from '../../helpers/forms'
 
-const REQUIRED_FIELD_ERROR = 'Required field' // вынести ?
-
-// TODO нужен ли этот хук ?
-
-export function useForm() {
+export function useForm(args = {}) {
+  const { validators = [], onSubmit: handleSubmit, onSuccess, onFailure } = args
   const [errors, setErrors] = useState({})
   const [pending, setPending] = useState(false)
 
@@ -17,24 +13,18 @@ export function useForm() {
   )
 
   const validate = useCallback( (e) => {
-    const inputs = e.target.getElementsByTagName('input')
-    const validationErrors = {}
+    const rawInputs = e.target.getElementsByTagName('input')
+    const inputs = Array.from(rawInputs)
 
-    for (let input of Array.from(inputs)) {
-      if (input.required && !input.value) {
-        validationErrors[input.name] = REQUIRED_FIELD_ERROR
-        continue;
-      }
-
-      delete validationErrors[input.name]
-    }
+    const allValidators = [...defaultFormValidators, ...validators]
+    const validationErrors = allValidators.reduceRight((currentErrors, validator) => ({ ...currentErrors, ...validator(inputs) }), {})
 
     setErrors(validationErrors)
 
     const isValid = Object.keys(validationErrors).length === 0
 
     return isValid
-  }, [])
+  }, [validators])
 
   const onSubmit = useCallback(
     async (e) => {
@@ -46,19 +36,18 @@ export function useForm() {
 
       setPending(true)
 
-      const credentials = getSubmittedFormData(e)
-      const response = await SignInAPI(credentials)
+      const data = getSubmittedFormData(e)
+      const response = await handleSubmit(data)
 
       setPending(false)
 
-      // if (response.success) {
-      //   console.log('успех!!!!', response)
-      //   window.open('https://mars.com/')
-      // } else {
-        // TODO показывать тост?
-        // console.log('провал....', response)
-      // }
-    }, [validate]
+      if (!response.success) {
+        onFailure(response.payload);
+        return;
+      }
+
+      onSuccess(response.payload)
+    }, [validate, handleSubmit, onFailure, onSuccess]
   )
 
   return { errors, pending, onFocus, onSubmit }

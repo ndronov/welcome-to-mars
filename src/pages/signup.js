@@ -1,20 +1,15 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
 
 import Seo from '../components/Seo'
 import Layout from '../components/Layout'
+import SignUpForm from '../components/SignUpForm'
 
-// TODO rework ?
 function SignUpPage() {
   return (
     <Layout>
-      <h1>Hi from the SignupPage</h1>
-
-      <p>Welcome to SignupPage</p>
-
-      <Link to="/"><span>go home</span>Go back to the homepage333</Link>
+      <SignUpForm />
     </Layout>
-  )
+  );
 }
 
 export function Head() {
