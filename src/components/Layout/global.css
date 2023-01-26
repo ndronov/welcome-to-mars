@@ -1,5 +1,5 @@
 :root {
-  --border-radius: 4px;
+  /*--border-radius: 4px;*/
   --palette-blue: #3369f3;
   --palette-white: #ffffff;
   --palette-black: #1e1e1e;
@@ -23,9 +23,6 @@
   --space-4: 24px;
   --space-5: 32px;
   --space-6: 64px;
-  --size-content: 54rem;
-  --size-gutter: var(--space-5);
-  --size-gap: var(--space-6);
 }
 html {
   height: 100%;
@@ -49,7 +46,6 @@ a {
   background-color: transparent;
   color: var(--color-primary);
   text-decoration: none;
-  /* remove ? */
   font-weight: 500;
   outline: none;
 }
@@ -59,30 +55,10 @@ a:hover {
   text-decoration: none;
 }
 h1 {
-  margin: 0;
-  margin-bottom: 3rem;
+  margin: 0 0 3rem;
   padding: 0;
   line-height: var(--line-height-dense);
   letter-spacing: -0.01em;
-}
-h1 > b {
-  color: var(--color-primary);
-}
-img {
-  border-style: none;
-  max-width: 100%;
-}
-hr {
-  box-sizing: content-box;
-  overflow: visible;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding: 0;
-  margin-bottom: calc(var(--space-4) - 1px);
-  background: hsla(0, 0%, 0%, 0.2);
-  border: none;
-  height: 1px;
 }
 * {
   box-sizing: inherit;
@@ -92,50 +68,6 @@ hr {
 }
 *:after {
   box-sizing: inherit;
-}
-hgroup,
-img,
-figure,
-fieldset,
-ul,
-ol,
-dl,
-dd,
-p {
-  margin: 0;
-  padding: 0;
-  margin-bottom: var(--space-4);
-}
-ul,
-ol {
-  margin-left: var(--space-4);
-  list-style-position: outside;
-  list-style-image: none;
-}
-li {
-  margin-bottom: calc(var(--space-4) / 2);
-}
-ol li,
-ul li {
-  padding-left: 0;
-}
-li > ol,
-li > ul {
-  margin-bottom: calc(var(--space-4) / 2);
-  margin-left: var(--space-4);
-  margin-top: calc(var(--space-4) / 2);
-}
-li *:last-child {
-  margin-bottom: 0;
-}
-p *:last-child {
-  margin-bottom: 0;
-}
-li > p {
-  margin-bottom: calc(var(--space-4) / 2);
-}
-p {
-  max-width: 680px;
 }
 button,
 input {

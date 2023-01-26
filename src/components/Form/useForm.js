@@ -5,7 +5,9 @@ import { getSubmittedFormData } from '../../helpers/forms'
 
 const REQUIRED_FIELD_ERROR = 'Required field' // вынести ?
 
-export function useSignInForm() {
+// TODO нужен ли этот хук ?
+
+export function useForm() {
   const [errors, setErrors] = useState({})
   const [pending, setPending] = useState(false)
 
@@ -49,15 +51,13 @@ export function useSignInForm() {
 
       setPending(false)
 
-      if (response.success) {
-        // TODO показывать тост
-        window.location = 'https://mars.com/'
-        return;
-      }
-
-      // TODO показывать тост
-      console.log('провал....', response)
-
+      // if (response.success) {
+      //   console.log('успех!!!!', response)
+      //   window.open('https://mars.com/')
+      // } else {
+        // TODO показывать тост?
+        // console.log('провал....', response)
+      // }
     }, [validate]
   )
 

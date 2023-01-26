@@ -1,20 +1,18 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
 
 import Input from '../Input'
 import Button from '../Button'
+import Form from '../Form'
 
 import { useSignInForm } from './useSignInForm'
 
-import * as styles from '../index.module.css'
+import * as styles from './SignInForm.module.css'
 
 function SignInForm() {
   const { errors, pending, onSubmit, onFocus } = useSignInForm();
 
   return (
-    <form className={styles.authForm} onSubmit={onSubmit} noValidate>
-      <h1 className={styles.title}>Sign in</h1>
-
+    <Form onSubmit={onSubmit} title="Sign in">
       <Input
         disabled={pending}
         error={errors.email}
@@ -45,10 +43,13 @@ function SignInForm() {
         type="submit"
       />
 
-      <Link to="signup" className={styles.authModeSwitchLink}>
-        <span>Create account</span>
-      </Link>
-    </form>
+      <Button
+        className={styles.createAccountButton}
+        kind="outlined"
+        label="Create account"
+        to="signup"
+      />
+    </Form>
   )
 }
 

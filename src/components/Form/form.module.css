@@ -1,0 +1,15 @@
+.form {
+    min-height: 450px;
+    padding: 50px 30px 30px;
+    width: 340px;
+    display: flex;
+    flex-flow: column;
+    background: var(--palette-white);
+    border-radius: 12px;
+    box-shadow: 0 0 6px #00000024;
+}
+
+.title {
+    align-self: center;
+    font-size: var(--font-lg);
+}
