@@ -1,15 +1,13 @@
 import * as React from 'react'
 
-import * as styles from '../components/index.module.css'
-import './layout.css'
-
-// TODO move style main to layout ?
+import './global.css'
+import * as styles from './layout.module.css'
 
 function Layout(props) {
   const { children } = props
 
   return (
-    <main className={styles.main}>
+    <main className={styles.container}>
       {children}
     </main>
   )

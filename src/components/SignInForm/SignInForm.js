@@ -1,11 +1,11 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
 
+import Input from '../Input'
+
 import { useSignInForm } from './useSignInForm'
 
 import * as styles from '../index.module.css'
-
-// TODO вынести input в компоненты ? нет. или да..
 
 function SignInForm() {
   const { errors, pending, onSubmit, onFocus } = useSignInForm();
@@ -14,17 +14,27 @@ function SignInForm() {
     <form className={styles.authForm} onSubmit={onSubmit} noValidate>
       <h1 className={styles.title}>Sign in</h1>
 
-      <label className={styles.authFormField}>
-        Email
-        <input className={styles.input} type="email" id="email" name="email" required disabled={pending} onFocus={onFocus} />
-        {errors.email && <span className={styles.error}>{errors.email}</span>}
-      </label>
+      <Input
+        disabled={pending}
+        error={errors.email}
+        id="email"
+        label="Email"
+        name="email"
+        onFocus={onFocus}
+        required
+        type="email"
+      />
 
-      <label className={styles.authFormField}>
-        Password
-        <input className={styles.input} type="password" id="password" name="password" required disabled={pending} onFocus={onFocus} />
-        {errors.password && <span className={styles.error}>{errors.password}</span>}
-      </label>
+      <Input
+        disabled={pending}
+        error={errors.password}
+        id="password"
+        label="Password!"
+        name="password"
+        onFocus={onFocus}
+        required
+        type="password"
+      />
 
       <div className={styles.gap} />
 

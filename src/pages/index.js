@@ -1,7 +1,7 @@
 import * as React from 'react'
 
-import Seo from '../components/seo'
-import Layout from '../components/layout'
+import Seo from '../components/Seo'
+import Layout from '../components/Layout'
 import SignInForm from '../components/SignInForm'
 
 function IndexPage() {

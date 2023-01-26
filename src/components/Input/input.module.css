@@ -1,0 +1,35 @@
+.container {
+    position: relative;
+    margin-top: var(--space-3);
+    padding-bottom: var(--font-lg);
+    display: flex;
+    flex-flow: column;
+    font-size: var(--font-sx);
+    color: var(--palette-gray);
+}
+
+.input {
+    font-size: var(--font-sm);
+    line-height: var(--line-height-normal);
+    font-weight: 500;
+    color: var(--color-text);
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: var(--color-primary);
+}
+
+.input:focus {
+    border-bottom-style: dashed;
+}
+
+.input:disabled {
+    color: var(--palette-gray);
+    border-bottom-color: var(--palette-gray);
+    background-color: transparent;
+}
+
+.error {
+    position: absolute;
+    bottom: 0;
+    color: var(--color-error);
+}
