@@ -1,5 +1,5 @@
-export function getSubmittedFormData(e) {
-  const formData = new FormData(e.target)
+export function getSubmittedFormData(submitEvent) {
+  const formData = new FormData(submitEvent.target)
   const nonEmptyFields = {}
 
   for (const [fieldName, fieldValue] of formData.entries()) {
@@ -7,22 +7,14 @@ export function getSubmittedFormData(e) {
 
     if (isEmpty) continue
 
-    nonEmptyFields[fieldName] = typeof fieldValue === 'string'
-      ? sanitizeUserInput(fieldValue)
-      : fieldValue
+    nonEmptyFields[fieldName] = fieldValue
   }
 
   return nonEmptyFields
 }
 
-
-// TODO надо ли ?
-export function sanitizeUserInput(userInput) {
-  return userInput
-}
-
 const FIELD_REQUIREMENT_ERROR = 'Enter a value'
-const FIELDS_EQUALITY_ERROR = 'Those values didn’t match'
+const FIELDS_EQUALITY_ERROR = 'Values did not match'
 
 export function validateRequiredFields(inputs) {
   const errors = {}
@@ -40,21 +32,16 @@ export function validateRequiredFields(inputs) {
 }
 
 export function makeFieldsEqualityValidator(name1, name2) {
-  return function validateFieldsEquality(rawInputs) {
-    const inputs = Array.from(rawInputs);
+  return function validateFieldsEquality(inputs) {
     const field1 = inputs.find(i => i.name === name1)
     const field2 = inputs.find(i => i.name === name2)
 
-    if (field1.value === field2.value) {
+    if (field1?.value === field2?.value) {
       return {}
     }
 
     return { [name2]: FIELDS_EQUALITY_ERROR }
   }
-}
-
-export function getDefaultFormValidators() {
-  return [validateRequiredFields]
 }
 
 export const defaultFormValidators = [validateRequiredFields]
