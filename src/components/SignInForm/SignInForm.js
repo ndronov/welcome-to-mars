@@ -7,7 +7,7 @@ import { useForm } from '../Form/useForm'
 
 import { SignInAPI } from '../../api/SignInAPI'
 
-import * as styles from './SignInForm.module.css'
+import * as formStyles  from '../Form/form.module.css'
 
 const yes = (param) => {
   window.location = 'https://mars.com/'
@@ -49,7 +49,7 @@ export function SignInForm() {
         type="password"
       />
 
-      <div className={styles.gap} />
+      <div className={formStyles.gap} />
 
       <Button
         disabled={pending}
@@ -58,7 +58,7 @@ export function SignInForm() {
       />
 
       <Button
-        className={styles.signUpButton}
+        className={formStyles.modeChangeButton}
         kind="outlined"
         label="Create account"
         to="signup"

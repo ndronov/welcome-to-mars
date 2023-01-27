@@ -8,7 +8,7 @@ import { useForm } from '../Form/useForm'
 import { SignUpAPI } from '../../api/SignUpAPI'
 import { makeFieldsEqualityValidator } from '../../helpers/forms'
 
-import * as styles from './SignUpForm.module.css'
+import * as formStyles  from '../Form/form.module.css'
 
 const yes = (param) => {
   window.location = '/'
@@ -61,7 +61,7 @@ export function SignUpForm() {
         type="password"
       />
 
-      <div className={styles.gap} />
+      <div className={formStyles.gap} />
 
       <Button
         disabled={pending}
@@ -70,7 +70,7 @@ export function SignUpForm() {
       />
 
       <Button
-        className={styles.signInButton}
+        className={formStyles.modeChangeButton}
         kind="outlined"
         label="Already have an account"
         to="/"

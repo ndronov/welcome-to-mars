@@ -13,3 +13,12 @@
     align-self: center;
     font-size: var(--font-lg);
 }
+
+.gap {
+    flex: 1;
+    min-height: var(--space-6);
+}
+
+.mode-change-button {
+    margin-top: var(--space-2);
+}
