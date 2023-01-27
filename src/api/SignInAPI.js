@@ -1,19 +1,19 @@
 import { hitOrMiss } from './http'
 
-export async function SignInAPI(args) {
+export async function SignInAPI(_args) {
   const response = hitOrMiss() ? {
     success: true,
     payload: {
-      message: 'You are successfully logged in'
+      message: 'You have successfully logged in. Now you will be moved to Mars.'
     }
   } : {
     success: false,
     payload: {
-      message: 'Error, please check your credentials'
+      message: 'Login error, please check your credentials'
     }
   }
 
   return new Promise(resolve => {
-    setTimeout(() => resolve(response), 42 * 100)
+    setTimeout(() => resolve(response), 420)
   });
 }

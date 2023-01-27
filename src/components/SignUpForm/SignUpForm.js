@@ -7,21 +7,15 @@ import { useForm } from '../Form/useForm'
 
 import { SignUpAPI } from '../../api/SignUpAPI'
 import { makeFieldsEqualityValidator } from '../../helpers/forms'
+import { handleSignUpSuccess, handleAuthFailure } from '../../helpers/auth'
 
 import * as formStyles  from '../Form/form.module.css'
-
-const yes = (param) => {
-  window.location = '/'
-  console.log('успех....', param)
-}
-
-const no = (param) => console.log('провал....', param)
 
 const useFormArgs = {
   validators: [makeFieldsEqualityValidator('password', 'confirmPassword')],
   onSubmit: SignUpAPI,
-  onSuccess: yes,
-  onFailure: no,
+  onSuccess: handleSignUpSuccess,
+  onFailure: handleAuthFailure,
 }
 
 export function SignUpForm() {

@@ -4,22 +4,15 @@ import { Input } from '../Input'
 import { Button } from '../Button'
 import { Form } from '../Form'
 import { useForm } from '../Form/useForm'
-
-import { SignInAPI } from '../../api/SignInAPI'
-
 import * as formStyles  from '../Form/form.module.css'
 
-const yes = (param) => {
-  window.location = 'https://mars.com/'
-  console.log('успех....', param)
-}
-
-const no = (param) => console.log('провал....', param)
+import { SignInAPI } from '../../api/SignInAPI'
+import { handleSignInSuccess, handleAuthFailure } from '../../helpers/auth'
 
 const useFormArgs = {
   onSubmit: SignInAPI,
-  onSuccess: yes,
-  onFailure: no,
+  onSuccess: handleSignInSuccess,
+  onFailure: handleAuthFailure,
 }
 
 export function SignInForm() {

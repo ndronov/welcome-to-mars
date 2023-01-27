@@ -1,0 +1,31 @@
+.toast {
+    position: fixed;
+    top: var(--space-3);
+    max-width: var(--default-widget-width);
+    padding: var(--space-3);
+    color: var(--palette-white);
+    background: var(--color-error);
+    border-radius: var(--space-3);
+    transition-property: right;
+    transition-duration: var(--transition);
+}
+
+.toast_default {
+    background: var(--color-primary);
+}
+
+.toast_success {
+    background: var(--color-success);
+}
+
+.toast_error {
+    background: var(--color-error);
+}
+
+.toast_visible {
+    right: var(--space-3);
+}
+
+.toast_hidden {
+    right: calc(var(--default-widget-width) * -1);
+}

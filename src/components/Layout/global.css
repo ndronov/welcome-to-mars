@@ -1,10 +1,13 @@
 :root {
-  --palette-blue: #3369f3;
-  --palette-white: #ffffff;
+  --default-widget-width: 360px;
   --palette-black: #1e1e1e;
-  --palette-red: #ff2f2f;
+  --palette-blue: #3369f3;
   --palette-gray: #999999;
+  --palette-green: #009269;
+  --palette-red: #ff2f2f;
+  --palette-white: #ffffff;
   --color-text: var(--palette-black);
+  --color-success: var(--palette-green);
   --color-error: var(--palette-red);
   --color-primary: var(--palette-blue);
   --color-disabled: var(--palette-gray);
@@ -22,6 +25,7 @@
   --space-4: 24px;
   --space-5: 32px;
   --space-6: 64px;
+  --transition: 1s;
 }
 html {
   height: 100%;

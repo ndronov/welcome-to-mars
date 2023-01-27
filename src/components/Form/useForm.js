@@ -39,9 +39,8 @@ export function useForm(args = {}) {
       const data = getSubmittedFormData(e)
       const response = await handleSubmit(data)
 
-      setPending(false)
-
       if (!response.success) {
+        setPending(false)
         onFailure(response.payload);
         return;
       }
