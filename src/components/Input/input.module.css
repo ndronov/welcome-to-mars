@@ -5,7 +5,7 @@
     display: flex;
     flex-flow: column;
     font-size: var(--font-sx);
-    color: var(--palette-gray);
+    color: inherit;
 }
 
 .input {

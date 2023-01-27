@@ -1,5 +1,5 @@
 .container {
-    border-radius: 8px;
+    border-radius: var(--space-2);
 }
 
 .container:focus {
@@ -12,8 +12,8 @@
     min-height: var(--space-5);
     padding: var(--space-2);
     font-size: var(--font-sm);
-    background-color: var(--color-primary);
     color: var(--palette-white);
+    background-color: var(--color-primary);
 }
 
 .button_default {

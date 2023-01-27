@@ -1,6 +1,6 @@
-import * as React from 'react'
+import React from 'react'
 
-function Seo(props) {
+export function Seo(props) {
   const { title, children } = props
 
   return (
@@ -10,5 +10,3 @@ function Seo(props) {
     </>
   )
 }
-
-export default Seo

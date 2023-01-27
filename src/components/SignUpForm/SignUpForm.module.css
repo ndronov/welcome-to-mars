@@ -4,5 +4,5 @@
 
 .gap {
     flex: 1;
-    min-height: var(--space-6);
+    min-height: var(--space-4);
 }

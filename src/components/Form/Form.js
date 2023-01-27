@@ -1,8 +1,8 @@
-import * as React from 'react'
+import React from 'react'
 
 import * as styles from './form.module.css'
 
-function Form(props) {
+export function Form(props) {
   const { children, title, onSubmit } = props;
 
   return (
@@ -12,5 +12,3 @@ function Form(props) {
     </form>
   )
 }
-
-export default Form

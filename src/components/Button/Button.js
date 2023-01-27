@@ -1,17 +1,17 @@
-import * as React from 'react'
+import React from 'react'
 import { Link } from 'gatsby'
 
 import * as styles from './button.module.css'
 
-function Button(props) {
+export function Button(props) {
   const {
     className = '',
     disabled,
+    kind = 'default',
     label,
     onClick,
     to,
     type = 'button',
-    kind = 'default',
   } = props
 
   const buttonKindStyle = styles[`button_${kind}`] ?? styles[`button_default`]
@@ -37,5 +37,3 @@ function Button(props) {
     </Link>
   )
 }
-
-export default Button

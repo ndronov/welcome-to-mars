@@ -8,7 +8,7 @@ export function useForm(args = {}) {
   const [pending, setPending] = useState(false)
 
   const onFocus = useCallback((e) => {
-      setErrors(currentErrors => ({ ...currentErrors, [e.target.name]: null }))
+      setErrors(current => ({ ...current, [e.target.name]: null }))
     }, []
   )
 
@@ -17,7 +17,7 @@ export function useForm(args = {}) {
     const inputs = Array.from(rawInputs)
 
     const allValidators = [...defaultFormValidators, ...validators]
-    const validationErrors = allValidators.reduceRight((currentErrors, validator) => ({ ...currentErrors, ...validator(inputs) }), {})
+    const validationErrors = allValidators.reduceRight((current, validator) => ({ ...current, ...validator(inputs) }), {})
 
     setErrors(validationErrors)
 

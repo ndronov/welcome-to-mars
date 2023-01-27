@@ -1,13 +1,12 @@
-import * as React from 'react'
+import React from 'react'
 
 import * as styles from './input.module.css'
 
-function Input(props) {
+export function Input(props) {
   const {
     autoComplete,
     disabled,
     error,
-    id,
     label,
     name,
     onFocus,
@@ -23,7 +22,6 @@ function Input(props) {
           autoComplete={autoComplete}
           className={styles.input}
           disabled={disabled}
-          id={id}
           name={name}
           onFocus={onFocus}
           required={required}
@@ -34,5 +32,3 @@ function Input(props) {
       </label>
   )
 }
-
-export default Input

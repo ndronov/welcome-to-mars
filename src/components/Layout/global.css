@@ -1,5 +1,4 @@
 :root {
-  /*--border-radius: 4px;*/
   --palette-blue: #3369f3;
   --palette-white: #ffffff;
   --palette-black: #1e1e1e;
@@ -55,7 +54,7 @@ a:hover {
   text-decoration: none;
 }
 h1 {
-  margin: 0 0 3rem;
+  margin: 0 0 2rem;
   padding: 0;
   line-height: var(--line-height-dense);
   letter-spacing: -0.01em;

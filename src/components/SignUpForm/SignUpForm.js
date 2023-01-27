@@ -1,8 +1,8 @@
 import * as React from 'react'
 
-import Input from '../Input'
-import Button from '../Button'
-import Form from '../Form'
+import { Input } from '../Input'
+import { Button } from '../Button'
+import { Form } from '../Form'
 import { useForm } from '../Form/useForm'
 
 import { SignUpAPI } from '../../api/SignUpAPI'
@@ -24,8 +24,8 @@ const useFormArgs = {
   onFailure: no,
 }
 
-function SignUpForm() {
-  const { errors, pending, onSubmit, onFocus } = useForm(useFormArgs);
+export function SignUpForm() {
+  const { errors, pending, onSubmit, onFocus } = useForm(useFormArgs)
 
   return (
     <Form onSubmit={onSubmit} title="Sign up">
@@ -78,5 +78,3 @@ function SignUpForm() {
     </Form>
   )
 }
-
-export default SignUpForm

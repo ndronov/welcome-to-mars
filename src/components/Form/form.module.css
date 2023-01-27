@@ -1,12 +1,12 @@
 .form {
-    min-height: 450px;
-    padding: 50px 30px 30px;
-    width: 340px;
+    --default-width: 360px;
+    min-width: var(--default-width);
+    min-height: calc(var(--default-width) * 4 / 3);
+    padding: var(--space-5);
     display: flex;
     flex-flow: column;
     background: var(--palette-white);
-    border-radius: 12px;
-    box-shadow: 0 0 6px #00000024;
+    border-radius: var(--space-3);
 }
 
 .title {
