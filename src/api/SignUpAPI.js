@@ -1,8 +1,6 @@
 import { hitOrMiss } from './http'
 
 export async function SignUpAPI(args) {
-  console.info('Sign up try...', args)
-
   const response = hitOrMiss() ? {
     success: true,
     payload: {

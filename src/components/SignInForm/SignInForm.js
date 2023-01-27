@@ -5,7 +5,7 @@ import { Button } from '../Button'
 import { Form } from '../Form'
 import { useForm } from '../Form/useForm'
 
-import { SignInAPI } from '../../api/SignInAPI';
+import { SignInAPI } from '../../api/SignInAPI'
 
 import * as styles from './SignInForm.module.css'
 
