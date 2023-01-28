@@ -5,18 +5,18 @@
   "version": "0.0.1",
   "author": "Nikita Dronov",
   "dependencies": {
-    "gatsby": "^5.4.2",
-    "gatsby-plugin-image": "^3.4.0",
-    "gatsby-plugin-manifest": "^5.4.0",
-    "gatsby-plugin-sharp": "^5.4.0",
-    "gatsby-source-filesystem": "^5.4.0",
-    "gatsby-transformer-sharp": "^5.4.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "gatsby": "5.4.2",
+    "gatsby-plugin-image": "3.4.0",
+    "gatsby-plugin-manifest": "5.4.0",
+    "gatsby-plugin-sharp": "5.4.0",
+    "gatsby-source-filesystem": "5.4.0",
+    "gatsby-transformer-sharp": "5.4.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "gh-pages": "^5.0.0",
-    "prettier": "^2.8.3"
+    "gh-pages": "5.0.0",
+    "prettier": "2.8.3"
   },
   "keywords": [
     "mars"
