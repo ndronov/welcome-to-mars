@@ -11,7 +11,7 @@ module.exports = {
   pathPrefix: '/welcome-to-mars',
   siteMetadata: {
     title: `welcome-to-mars`,
-    description: `A convenient and beautiful form of authentication via mail and password`,
+    description: `A convenient and beautiful authentication form`,
     author: `Nikita Dronov`,
     siteUrl: `https://ndronov.github.io/welcome-to-mars`,
   },

@@ -7,11 +7,11 @@ import { useForm } from '../Form/useForm'
 import * as formStyles  from '../Form/form.module.css'
 
 import { SignInAPI } from '../../api/SignInAPI'
-import { handleSignInSuccess, handleAuthFailure } from '../../helpers/auth'
+import { handleAuthSuccess, handleAuthFailure } from '../../helpers/auth'
 
 const useFormArgs = {
   onSubmit: SignInAPI,
-  onSuccess: handleSignInSuccess,
+  onSuccess: handleAuthSuccess,
   onFailure: handleAuthFailure,
 }
 

@@ -4,7 +4,7 @@ export async function SignUpAPI(_args) {
   const response = hitOrMiss() ? {
     success: true,
     payload: {
-      message: 'Account has been created successfully, now you can sign in'
+      message: 'Account has been created successfully. Welcome to Mars!'
     }
   } : {
     success: false,

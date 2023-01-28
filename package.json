@@ -1,7 +1,7 @@
 {
   "name": "welcome-to-mars",
   "private": true,
-  "description": "A convenient and beautiful form of authentication via mail and password",
+  "description": "A convenient and beautiful authentication form",
   "version": "0.0.1",
   "author": "Nikita Dronov",
   "dependencies": {

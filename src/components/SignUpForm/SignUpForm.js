@@ -7,14 +7,14 @@ import { useForm } from '../Form/useForm'
 
 import { SignUpAPI } from '../../api/SignUpAPI'
 import { makeFieldsEqualityValidator } from '../../helpers/forms'
-import { handleSignUpSuccess, handleAuthFailure } from '../../helpers/auth'
+import { handleAuthSuccess, handleAuthFailure } from '../../helpers/auth'
 
 import * as formStyles  from '../Form/form.module.css'
 
 const useFormArgs = {
   validators: [makeFieldsEqualityValidator('password', 'confirmPassword')],
   onSubmit: SignUpAPI,
-  onSuccess: handleSignUpSuccess,
+  onSuccess: handleAuthSuccess,
   onFailure: handleAuthFailure,
 }
 
