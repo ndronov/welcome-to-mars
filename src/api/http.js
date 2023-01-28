@@ -1,3 +1,3 @@
 export function hitOrMiss() {
-  return Math.random() * 100 > 42;
+  return Math.random() * 100 > 42
 }

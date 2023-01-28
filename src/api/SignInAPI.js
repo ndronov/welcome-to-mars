@@ -4,12 +4,12 @@ export async function SignInAPI(_args) {
   const response = hitOrMiss() ? {
     success: true,
     payload: {
-      message: 'You have successfully logged in. Now you will be moved to Mars.'
+      message: 'You have successfully logged in. Now you will be moved to Mars.',
     }
   } : {
     success: false,
     payload: {
-      message: 'Login error, please check your credentials'
+      message: 'Login error, please check your credentials',
     }
   }
 

@@ -1,7 +1,7 @@
 .toast {
     position: fixed;
     top: var(--space-3);
-    max-width: var(--default-widget-width);
+    max-width: var(--widget-width);
     padding: var(--space-3);
     color: var(--palette-white);
     background: var(--color-error);
@@ -27,5 +27,5 @@
 }
 
 .toast_hidden {
-    right: calc(var(--default-widget-width) * -1);
+    right: calc(var(--widget-width) * -1);
 }

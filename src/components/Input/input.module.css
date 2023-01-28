@@ -23,8 +23,8 @@
 }
 
 .input:disabled {
-    color: var(--palette-gray);
-    border-bottom-color: var(--palette-gray);
+    color: var(--color-disabled);
+    border-bottom-color: var(--color-disabled);
     background-color: transparent;
 }
 

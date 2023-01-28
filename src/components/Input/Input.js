@@ -12,7 +12,7 @@ export function Input(props) {
     onFocus,
     required,
     type,
-  } = props;
+  } = props
 
   return (
       <label className={styles.container}>

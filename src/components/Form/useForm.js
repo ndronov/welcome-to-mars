@@ -41,7 +41,8 @@ export function useForm(args = {}) {
 
       if (!response.success) {
         setPending(false)
-        onFailure(response.payload);
+        onFailure(response.payload)
+
         return;
       }
 

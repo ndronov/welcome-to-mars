@@ -1,6 +1,6 @@
 .form {
-    min-width: var(--default-widget-width);
-    min-height: calc(var(--default-widget-width) * 4 / 3);
+    min-width: var(--widget-width);
+    min-height: calc(var(--widget-width) * 4 / 3);
     padding: var(--space-5);
     display: flex;
     flex-flow: column;
