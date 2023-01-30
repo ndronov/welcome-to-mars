@@ -1,60 +1,65 @@
-import { useCallback, useState } from "react"
+import { useCallback, useState } from "react";
 
-import { getSubmittedFormData, defaultFormValidators } from "../../helpers"
+import { getSubmittedFormData, defaultFormValidators } from "../../helpers";
 
 export function useForm(args = {}) {
-  const { validators = [], onSubmit: handleSubmit, onSuccess, onFailure } = args
-  const [errors, setErrors] = useState({})
-  const [pending, setPending] = useState(false)
+  const {
+    validators = [],
+    onSubmit: handleSubmit,
+    onSuccess,
+    onFailure,
+  } = args;
+  const [errors, setErrors] = useState({});
+  const [pending, setPending] = useState(false);
 
   const onFocus = useCallback(e => {
-    setErrors(current => ({ ...current, [e.target.name]: null }))
-  }, [])
+    setErrors(current => ({ ...current, [e.target.name]: null }));
+  }, []);
 
   const validate = useCallback(
     e => {
-      const rawInputs = e.target.getElementsByTagName("input")
-      const inputs = Array.from(rawInputs)
+      const rawInputs = e.target.getElementsByTagName("input");
+      const inputs = Array.from(rawInputs);
 
-      const allValidators = [...defaultFormValidators, ...validators]
+      const allValidators = [...defaultFormValidators, ...validators];
       const validationErrors = allValidators.reduceRight(
         (current, validator) => ({ ...current, ...validator(inputs) }),
         {}
-      )
+      );
 
-      setErrors(validationErrors)
+      setErrors(validationErrors);
 
-      const isValid = Object.keys(validationErrors).length === 0
+      const isValid = Object.keys(validationErrors).length === 0;
 
-      return isValid
+      return isValid;
     },
     [validators]
-  )
+  );
 
   const onSubmit = useCallback(
     async e => {
-      e.preventDefault()
+      e.preventDefault();
 
-      const isValid = validate(e)
+      const isValid = validate(e);
 
-      if (!isValid) return
+      if (!isValid) return;
 
-      setPending(true)
+      setPending(true);
 
-      const data = getSubmittedFormData(e)
-      const response = await handleSubmit(data)
+      const data = getSubmittedFormData(e);
+      const response = await handleSubmit(data);
 
       if (!response.success) {
-        setPending(false)
-        onFailure(response.payload)
+        setPending(false);
+        onFailure(response.payload);
 
-        return
+        return;
       }
 
-      onSuccess(response.payload)
+      onSuccess(response.payload);
     },
     [validate, handleSubmit, onFailure, onSuccess]
-  )
+  );
 
-  return { errors, pending, onFocus, onSubmit }
+  return { errors, pending, onFocus, onSubmit };
 }

@@ -1,22 +1,22 @@
-import React from "react"
+import React from "react";
 
-import { Input } from "../Input"
-import { Button } from "../Button"
-import { Form, useForm } from "../Form"
+import { Input } from "../Input";
+import { Button } from "../Button";
+import { Form, useForm } from "../Form";
 
-import { SignInAPI } from "../../api"
-import { handleAuthSuccess, handleAuthFailure } from "../../helpers"
+import { SignInAPI } from "../../api";
+import { handleAuthSuccess, handleAuthFailure } from "../../helpers";
 
-import * as formStyles from "../Form/form.module.css"
+import * as formStyles from "../Form/form.module.css";
 
 const args = {
   onSubmit: SignInAPI,
   onSuccess: handleAuthSuccess,
   onFailure: handleAuthFailure,
-}
+};
 
 export function SignInForm() {
-  const { errors, pending, onSubmit, onFocus } = useForm(args)
+  const { errors, pending, onSubmit, onFocus } = useForm(args);
 
   return (
     <Form onSubmit={onSubmit} title="Sign in">
@@ -53,5 +53,5 @@ export function SignInForm() {
         to="signup"
       />
     </Form>
-  )
+  );
 }

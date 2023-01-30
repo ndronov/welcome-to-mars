@@ -1,31 +1,31 @@
-import React from "react"
-import { createRoot } from "react-dom/client"
+import React from "react";
+import { createRoot } from "react-dom/client";
 
-import { Toast } from "./Toast"
+import { Toast } from "./Toast";
 
 export function showToast(args) {
-  const { root, container } = createToastRoot()
+  const { root, container } = createToastRoot();
 
   function hide(onHide) {
     setTimeout(() => {
-      root.unmount()
-      container.remove()
-      onHide?.()
-    }, TRANSITION_TIMEOUT)
+      root.unmount();
+      container.remove();
+      onHide?.();
+    }, TRANSITION_TIMEOUT);
   }
 
-  root.render(<Toast {...args} hide={hide} />)
+  root.render(<Toast {...args} hide={hide} />);
 }
 
 export function createToastRoot() {
-  const container = document.createElement("div")
+  const container = document.createElement("div");
 
-  document.body.append(container)
+  document.body.append(container);
 
-  const root = createRoot(container)
+  const root = createRoot(container);
 
-  return { root, container }
+  return { root, container };
 }
 
-export const TRANSITION_TIMEOUT = 1000
-export const AUTO_CLOSE_TIMEOUT = 5000
+export const TRANSITION_TIMEOUT = 1000;
+export const AUTO_CLOSE_TIMEOUT = 5000;

@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-import * as styles from "./input.module.css"
+import * as styles from "./input.module.css";
 
 export function Input(props) {
   const {
@@ -12,7 +12,7 @@ export function Input(props) {
     onFocus,
     required,
     type,
-  } = props
+  } = props;
 
   return (
     <label className={styles.container}>
@@ -30,5 +30,5 @@ export function Input(props) {
 
       {error && <span className={styles.error}>{error}</span>}
     </label>
-  )
+  );
 }

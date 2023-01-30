@@ -1,7 +1,7 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from "react";
+import { Link } from "gatsby";
 
-import * as styles from "./button.module.css"
+import * as styles from "./button.module.css";
 
 export function Button(props) {
   const {
@@ -12,9 +12,9 @@ export function Button(props) {
     onClick,
     to,
     type = "button",
-  } = props
+  } = props;
 
-  const buttonKindStyle = styles[`button_${kind}`] ?? styles[`button_default`]
+  const buttonKindStyle = styles[`button_${kind}`] ?? styles[`button_default`];
 
   if (!to) {
     return (
@@ -26,7 +26,7 @@ export function Button(props) {
       >
         {label}
       </button>
-    )
+    );
   }
 
   return (
@@ -37,5 +37,5 @@ export function Button(props) {
         {label}
       </span>
     </Link>
-  )
+  );
 }

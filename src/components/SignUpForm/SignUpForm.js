@@ -1,27 +1,27 @@
-import * as React from "react"
+import * as React from "react";
 
-import { Input } from "../Input"
-import { Button } from "../Button"
-import { Form, useForm } from "../Form"
+import { Input } from "../Input";
+import { Button } from "../Button";
+import { Form, useForm } from "../Form";
 
-import { SignUpAPI } from "../../api"
+import { SignUpAPI } from "../../api";
 import {
   makeFieldsEqualityValidator,
   handleAuthSuccess,
   handleAuthFailure,
-} from "../../helpers"
+} from "../../helpers";
 
-import * as formStyles from "../Form/form.module.css"
+import * as formStyles from "../Form/form.module.css";
 
 const args = {
   validators: [makeFieldsEqualityValidator("password", "confirmPassword")],
   onSubmit: SignUpAPI,
   onSuccess: handleAuthSuccess,
   onFailure: handleAuthFailure,
-}
+};
 
 export function SignUpForm() {
-  const { errors, pending, onSubmit, onFocus } = useForm(args)
+  const { errors, pending, onSubmit, onFocus } = useForm(args);
 
   return (
     <Form onSubmit={onSubmit} title="Sign up">
@@ -68,5 +68,5 @@ export function SignUpForm() {
         to="/"
       />
     </Form>
-  )
+  );
 }

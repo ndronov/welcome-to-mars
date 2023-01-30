@@ -1,4 +1,4 @@
-import { hitOrMiss } from "./http"
+import { hitOrMiss } from "./http";
 
 export async function SignUpAPI(_args) {
   const response = hitOrMiss()
@@ -13,9 +13,9 @@ export async function SignUpAPI(_args) {
         payload: {
           message: "Failed to create an account, please try again later",
         },
-      }
+      };
 
   return new Promise(resolve => {
-    setTimeout(() => resolve(response), 420)
-  })
+    setTimeout(() => resolve(response), 420);
+  });
 }

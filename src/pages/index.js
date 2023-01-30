@@ -1,13 +1,13 @@
-import React from "react"
+import React from "react";
 
-import { Seo, Layout, SignInForm } from "../components"
+import { Seo, Layout, SignInForm } from "../components";
 
 function IndexPage() {
   return (
     <Layout>
       <SignInForm />
     </Layout>
-  )
+  );
 }
 
 /**
@@ -16,7 +16,7 @@ function IndexPage() {
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
 export function Head() {
-  return <Seo title="Sign in" />
+  return <Seo title="Sign in" />;
 }
 
-export default IndexPage
+export default IndexPage;

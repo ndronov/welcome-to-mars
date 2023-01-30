@@ -1,17 +1,17 @@
-import React from "react"
+import React from "react";
 
-import { Seo, Layout, SignUpForm } from "../components"
+import { Seo, Layout, SignUpForm } from "../components";
 
 function SignUpPage() {
   return (
     <Layout>
       <SignUpForm />
     </Layout>
-  )
+  );
 }
 
 export function Head() {
-  return <Seo title="Sign up" />
+  return <Seo title="Sign up" />;
 }
 
-export default SignUpPage
+export default SignUpPage;

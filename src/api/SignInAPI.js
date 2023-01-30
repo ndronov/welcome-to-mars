@@ -1,4 +1,4 @@
-import { hitOrMiss } from "./http"
+import { hitOrMiss } from "./http";
 
 export async function SignInAPI(_args) {
   const response = hitOrMiss()
@@ -14,9 +14,9 @@ export async function SignInAPI(_args) {
         payload: {
           message: "Login error, please check your credentials",
         },
-      }
+      };
 
   return new Promise(resolve => {
-    setTimeout(() => resolve(response), 420)
-  })
+    setTimeout(() => resolve(response), 420);
+  });
 }
