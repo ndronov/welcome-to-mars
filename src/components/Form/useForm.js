@@ -1,9 +1,6 @@
 import { useCallback, useState } from "react"
 
-import {
-  getSubmittedFormData,
-  defaultFormValidators,
-} from "../../helpers/forms"
+import { getSubmittedFormData, defaultFormValidators } from "../../helpers"
 
 export function useForm(args = {}) {
   const { validators = [], onSubmit: handleSubmit, onSuccess, onFailure } = args

@@ -5,9 +5,12 @@ import { Button } from "../Button"
 import { Form } from "../Form"
 import { useForm } from "../Form/useForm"
 
-import { SignUpAPI } from "../../api/SignUpAPI"
-import { makeFieldsEqualityValidator } from "../../helpers/forms"
-import { handleAuthSuccess, handleAuthFailure } from "../../helpers/auth"
+import { SignUpAPI } from "../../api"
+import {
+  makeFieldsEqualityValidator,
+  handleAuthSuccess,
+  handleAuthFailure,
+} from "../../helpers"
 
 import * as formStyles from "../Form/form.module.css"
 

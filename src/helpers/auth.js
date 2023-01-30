@@ -1,4 +1,4 @@
-import { showToast } from "../components/Toast"
+import { showToast } from "../components"
 
 const DEFAULT_SUCCESS_MESSAGE = "Welcome!"
 const DEFAULT_FAILURE_MESSAGE = "Error"

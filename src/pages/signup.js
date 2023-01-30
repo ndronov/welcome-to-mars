@@ -1,8 +1,6 @@
 import React from "react"
 
-import { Seo } from "../components/Seo"
-import { Layout } from "../components/Layout"
-import { SignUpForm } from "../components/SignUpForm"
+import { Seo, Layout, SignUpForm } from "../components"
 
 function SignUpPage() {
   return (

@@ -2,12 +2,11 @@ import React from "react"
 
 import { Input } from "../Input"
 import { Button } from "../Button"
-import { Form } from "../Form"
-import { useForm } from "../Form/useForm"
+import { Form, useForm } from "../Form"
 import * as formStyles from "../Form/form.module.css"
 
-import { SignInAPI } from "../../api/SignInAPI"
-import { handleAuthSuccess, handleAuthFailure } from "../../helpers/auth"
+import { SignInAPI } from "../../api"
+import { handleAuthSuccess, handleAuthFailure } from "../../helpers"
 
 const useFormArgs = {
   onSubmit: SignInAPI,
