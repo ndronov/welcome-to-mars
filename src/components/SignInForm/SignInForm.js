@@ -3,19 +3,20 @@ import React from "react"
 import { Input } from "../Input"
 import { Button } from "../Button"
 import { Form, useForm } from "../Form"
-import * as formStyles from "../Form/form.module.css"
 
 import { SignInAPI } from "../../api"
 import { handleAuthSuccess, handleAuthFailure } from "../../helpers"
 
-const useFormArgs = {
+import * as formStyles from "../Form/form.module.css"
+
+const args = {
   onSubmit: SignInAPI,
   onSuccess: handleAuthSuccess,
   onFailure: handleAuthFailure,
 }
 
 export function SignInForm() {
-  const { errors, pending, onSubmit, onFocus } = useForm(useFormArgs)
+  const { errors, pending, onSubmit, onFocus } = useForm(args)
 
   return (
     <Form onSubmit={onSubmit} title="Sign in">

@@ -2,8 +2,7 @@ import * as React from "react"
 
 import { Input } from "../Input"
 import { Button } from "../Button"
-import { Form } from "../Form"
-import { useForm } from "../Form/useForm"
+import { Form, useForm } from "../Form"
 
 import { SignUpAPI } from "../../api"
 import {
@@ -14,7 +13,7 @@ import {
 
 import * as formStyles from "../Form/form.module.css"
 
-const useFormArgs = {
+const args = {
   validators: [makeFieldsEqualityValidator("password", "confirmPassword")],
   onSubmit: SignUpAPI,
   onSuccess: handleAuthSuccess,
@@ -22,7 +21,7 @@ const useFormArgs = {
 }
 
 export function SignUpForm() {
-  const { errors, pending, onSubmit, onFocus } = useForm(useFormArgs)
+  const { errors, pending, onSubmit, onFocus } = useForm(args)
 
   return (
     <Form onSubmit={onSubmit} title="Sign up">

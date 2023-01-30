@@ -3,7 +3,7 @@
 }
 
 .container:focus {
-  box-shadow: 0 0 2px 2px #999;
+  box-shadow: 0 0 2px 2px #999999;
 }
 
 .button {

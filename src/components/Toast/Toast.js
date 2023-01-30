@@ -14,14 +14,18 @@ export function Toast(props) {
     : styles.toast_hidden
 
   useEffect(() => {
-    requestAnimationFrame(() => setVisible(true))
+    const showCallback = requestAnimationFrame(() => setVisible(true))
 
-    setTimeout(() => {
+    const hideCallback = setTimeout(() => {
       setVisible(false)
-
       hide(onHide)
     }, AUTO_CLOSE_TIMEOUT)
-  }, [])
+
+    return () => {
+      cancelAnimationFrame(showCallback)
+      clearTimeout(hideCallback)
+    }
+  }, [onHide, hide])
 
   return (
     <div
