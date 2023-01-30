@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react"
 
-import * as styles from './input.module.css'
+import * as styles from "./input.module.css"
 
 export function Input(props) {
   const {
@@ -15,20 +15,20 @@ export function Input(props) {
   } = props
 
   return (
-      <label className={styles.container}>
-        {label}
+    <label className={styles.container}>
+      {label}
 
-        <input
-          autoComplete={autoComplete}
-          className={styles.input}
-          disabled={disabled}
-          name={name}
-          onFocus={onFocus}
-          required={required}
-          type={type}
-        />
+      <input
+        autoComplete={autoComplete}
+        className={styles.input}
+        disabled={disabled}
+        name={name}
+        onFocus={onFocus}
+        required={required}
+        type={type}
+      />
 
-        {error && <span className={styles.error}>{error}</span>}
-      </label>
+      {error && <span className={styles.error}>{error}</span>}
+    </label>
   )
 }

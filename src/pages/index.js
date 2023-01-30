@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react"
 
-import { Seo } from '../components/Seo'
-import { Layout } from '../components/Layout'
-import { SignInForm } from '../components/SignInForm'
+import { Seo } from "../components/Seo"
+import { Layout } from "../components/Layout"
+import { SignInForm } from "../components/SignInForm"
 
 function IndexPage() {
   return (

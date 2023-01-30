@@ -1,18 +1,18 @@
-import * as React from 'react'
+import * as React from "react"
 
-import { Input } from '../Input'
-import { Button } from '../Button'
-import { Form } from '../Form'
-import { useForm } from '../Form/useForm'
+import { Input } from "../Input"
+import { Button } from "../Button"
+import { Form } from "../Form"
+import { useForm } from "../Form/useForm"
 
-import { SignUpAPI } from '../../api/SignUpAPI'
-import { makeFieldsEqualityValidator } from '../../helpers/forms'
-import { handleAuthSuccess, handleAuthFailure } from '../../helpers/auth'
+import { SignUpAPI } from "../../api/SignUpAPI"
+import { makeFieldsEqualityValidator } from "../../helpers/forms"
+import { handleAuthSuccess, handleAuthFailure } from "../../helpers/auth"
 
-import * as formStyles  from '../Form/form.module.css'
+import * as formStyles from "../Form/form.module.css"
 
 const useFormArgs = {
-  validators: [makeFieldsEqualityValidator('password', 'confirmPassword')],
+  validators: [makeFieldsEqualityValidator("password", "confirmPassword")],
   onSubmit: SignUpAPI,
   onSuccess: handleAuthSuccess,
   onFailure: handleAuthFailure,
@@ -57,11 +57,7 @@ export function SignUpForm() {
 
       <div className={formStyles.gap} />
 
-      <Button
-        disabled={pending}
-        label="Sign up"
-        type="submit"
-      />
+      <Button disabled={pending} label="Sign up" type="submit" />
 
       <Button
         className={formStyles.modeChangeButton}

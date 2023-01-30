@@ -1,35 +1,35 @@
 .container {
-    position: relative;
-    margin-top: var(--space-3);
-    padding-bottom: var(--font-lg);
-    display: flex;
-    flex-flow: column;
-    font-size: var(--font-sx);
-    color: inherit;
+  position: relative;
+  margin-top: var(--space-3);
+  padding-bottom: var(--font-lg);
+  display: flex;
+  flex-flow: column;
+  font-size: var(--font-sx);
+  color: inherit;
 }
 
 .input {
-    font-size: var(--font-sm);
-    line-height: var(--line-height-normal);
-    font-weight: 500;
-    color: var(--color-text);
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    border-bottom-color: var(--color-primary);
+  font-size: var(--font-sm);
+  line-height: var(--line-height-normal);
+  font-weight: 500;
+  color: var(--color-text);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: var(--color-primary);
 }
 
 .input:focus {
-    border-bottom-style: dashed;
+  border-bottom-style: dashed;
 }
 
 .input:disabled {
-    color: var(--color-disabled);
-    border-bottom-color: var(--color-disabled);
-    background-color: transparent;
+  color: var(--color-disabled);
+  border-bottom-color: var(--color-disabled);
+  background-color: transparent;
 }
 
 .error {
-    position: absolute;
-    bottom: 0;
-    color: var(--color-error);
+  position: absolute;
+  bottom: 0;
+  color: var(--color-error);
 }

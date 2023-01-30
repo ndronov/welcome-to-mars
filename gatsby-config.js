@@ -8,7 +8,7 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
-  pathPrefix: '/welcome-to-mars',
+  pathPrefix: "/welcome-to-mars",
   siteMetadata: {
     title: `welcome-to-mars`,
     description: `A convenient and beautiful authentication form`,

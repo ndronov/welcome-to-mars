@@ -1,7 +1,7 @@
-import React from 'react'
-import { createRoot } from 'react-dom/client'
+import React from "react"
+import { createRoot } from "react-dom/client"
 
-import { Toast } from './Toast'
+import { Toast } from "./Toast"
 
 export function showToast(args) {
   const { root, container } = createToastRoot()
@@ -18,7 +18,7 @@ export function showToast(args) {
 }
 
 export function createToastRoot() {
-  const container = document.createElement('div')
+  const container = document.createElement("div")
 
   document.body.append(container)
 

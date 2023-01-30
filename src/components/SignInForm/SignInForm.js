@@ -1,13 +1,13 @@
-import React from 'react'
+import React from "react"
 
-import { Input } from '../Input'
-import { Button } from '../Button'
-import { Form } from '../Form'
-import { useForm } from '../Form/useForm'
-import * as formStyles  from '../Form/form.module.css'
+import { Input } from "../Input"
+import { Button } from "../Button"
+import { Form } from "../Form"
+import { useForm } from "../Form/useForm"
+import * as formStyles from "../Form/form.module.css"
 
-import { SignInAPI } from '../../api/SignInAPI'
-import { handleAuthSuccess, handleAuthFailure } from '../../helpers/auth'
+import { SignInAPI } from "../../api/SignInAPI"
+import { handleAuthSuccess, handleAuthFailure } from "../../helpers/auth"
 
 const useFormArgs = {
   onSubmit: SignInAPI,
@@ -44,11 +44,7 @@ export function SignInForm() {
 
       <div className={formStyles.gap} />
 
-      <Button
-        disabled={pending}
-        label="Sign in"
-        type="submit"
-      />
+      <Button disabled={pending} label="Sign in" type="submit" />
 
       <Button
         className={formStyles.modeChangeButton}

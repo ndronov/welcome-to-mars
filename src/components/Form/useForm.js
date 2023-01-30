@@ -1,33 +1,41 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useState } from "react"
 
-import { getSubmittedFormData, defaultFormValidators } from '../../helpers/forms'
+import {
+  getSubmittedFormData,
+  defaultFormValidators,
+} from "../../helpers/forms"
 
 export function useForm(args = {}) {
   const { validators = [], onSubmit: handleSubmit, onSuccess, onFailure } = args
   const [errors, setErrors] = useState({})
   const [pending, setPending] = useState(false)
 
-  const onFocus = useCallback((e) => {
-      setErrors(current => ({ ...current, [e.target.name]: null }))
-    }, []
+  const onFocus = useCallback(e => {
+    setErrors(current => ({ ...current, [e.target.name]: null }))
+  }, [])
+
+  const validate = useCallback(
+    e => {
+      const rawInputs = e.target.getElementsByTagName("input")
+      const inputs = Array.from(rawInputs)
+
+      const allValidators = [...defaultFormValidators, ...validators]
+      const validationErrors = allValidators.reduceRight(
+        (current, validator) => ({ ...current, ...validator(inputs) }),
+        {}
+      )
+
+      setErrors(validationErrors)
+
+      const isValid = Object.keys(validationErrors).length === 0
+
+      return isValid
+    },
+    [validators]
   )
 
-  const validate = useCallback( (e) => {
-    const rawInputs = e.target.getElementsByTagName('input')
-    const inputs = Array.from(rawInputs)
-
-    const allValidators = [...defaultFormValidators, ...validators]
-    const validationErrors = allValidators.reduceRight((current, validator) => ({ ...current, ...validator(inputs) }), {})
-
-    setErrors(validationErrors)
-
-    const isValid = Object.keys(validationErrors).length === 0
-
-    return isValid
-  }, [validators])
-
   const onSubmit = useCallback(
-    async (e) => {
+    async e => {
       e.preventDefault()
 
       const isValid = validate(e)
@@ -43,11 +51,12 @@ export function useForm(args = {}) {
         setPending(false)
         onFailure(response.payload)
 
-        return;
+        return
       }
 
       onSuccess(response.payload)
-    }, [validate, handleSubmit, onFailure, onSuccess]
+    },
+    [validate, handleSubmit, onFailure, onSuccess]
   )
 
   return { errors, pending, onFocus, onSubmit }

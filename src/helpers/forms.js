@@ -13,8 +13,8 @@ export function getSubmittedFormData(submitEvent) {
   return nonEmptyFields
 }
 
-const FIELD_REQUIREMENT_ERROR = 'Enter a value'
-const FIELDS_EQUALITY_ERROR = 'Values did not match'
+const FIELD_REQUIREMENT_ERROR = "Enter a value"
+const FIELDS_EQUALITY_ERROR = "Values did not match"
 
 export function validateRequiredFields(inputs) {
   const errors = {}
@@ -22,7 +22,7 @@ export function validateRequiredFields(inputs) {
   for (const input of inputs) {
     if (input.required && !input.value) {
       errors[input.name] = FIELD_REQUIREMENT_ERROR
-      continue;
+      continue
     }
 
     delete errors[input.name]
