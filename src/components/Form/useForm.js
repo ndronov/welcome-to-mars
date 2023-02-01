@@ -12,12 +12,12 @@ export function useForm(args = {}) {
   const [errors, setErrors] = useState({});
   const [pending, setPending] = useState(false);
 
-  const onFocus = useCallback(e => {
-    setErrors(current => ({ ...current, [e.target.name]: null }));
+  const onFocus = useCallback((e) => {
+    setErrors((current) => ({ ...current, [e.target.name]: null }));
   }, []);
 
   const validate = useCallback(
-    e => {
+    (e) => {
       const rawInputs = e.target.getElementsByTagName("input");
       const inputs = Array.from(rawInputs);
 
@@ -37,7 +37,7 @@ export function useForm(args = {}) {
   );
 
   const onSubmit = useCallback(
-    async e => {
+    async (e) => {
       e.preventDefault();
 
       const isValid = validate(e);

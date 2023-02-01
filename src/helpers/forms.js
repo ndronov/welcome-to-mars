@@ -33,8 +33,8 @@ export function validateRequiredFields(inputs) {
 
 export function makeFieldsEqualityValidator(name1, name2) {
   return function validateFieldsEquality(inputs) {
-    const field1 = inputs.find(i => i.name === name1);
-    const field2 = inputs.find(i => i.name === name2);
+    const field1 = inputs.find((i) => i.name === name1);
+    const field2 = inputs.find((i) => i.name === name2);
 
     if (field1?.value === field2?.value) {
       return {};

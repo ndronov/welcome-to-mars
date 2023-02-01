@@ -15,7 +15,7 @@ export async function SignUpAPI(_args) {
         },
       };
 
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     setTimeout(() => resolve(response), 420);
   });
 }

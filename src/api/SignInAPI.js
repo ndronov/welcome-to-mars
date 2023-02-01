@@ -16,7 +16,7 @@ export async function SignInAPI(_args) {
         },
       };
 
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     setTimeout(() => resolve(response), 420);
   });
 }
