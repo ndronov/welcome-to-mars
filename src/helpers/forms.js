@@ -13,8 +13,8 @@ export function getSubmittedFormData(submitEvent) {
   return nonEmptyFields;
 }
 
-const FIELD_REQUIREMENT_ERROR = "Enter a value";
-const FIELDS_EQUALITY_ERROR = "Values did not match";
+const FIELD_REQUIREMENT_ERROR = 'Enter a value';
+const FIELDS_EQUALITY_ERROR = 'Values did not match';
 
 export function validateRequiredFields(inputs) {
   const errors = {};

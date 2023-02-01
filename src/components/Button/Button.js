@@ -1,17 +1,17 @@
-import React from "react";
-import { Link } from "gatsby";
+import React from 'react';
+import { Link } from 'gatsby';
 
-import * as styles from "./button.module.css";
+import * as styles from './button.module.css';
 
 export function Button(props) {
   const {
-    className = "",
+    className = '',
     disabled,
-    kind = "default",
+    kind = 'default',
     label,
     onClick,
     to,
-    type = "button",
+    type = 'button',
   } = props;
 
   const buttonKindStyle = styles[`button_${kind}`] ?? styles[`button_default`];

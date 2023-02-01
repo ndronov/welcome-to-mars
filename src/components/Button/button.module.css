@@ -39,7 +39,7 @@
 }
 
 .button:disabled:after {
-  content: "\065C";
+  content: '\065C';
   position: absolute;
   right: var(--space-3);
   font-size: var(--font-lg);

@@ -11,8 +11,8 @@
   --color-primary: var(--palette-blue);
   --color-success: var(--palette-green);
   --color-text: var(--palette-black);
-  --font-sans: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-sans: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   --font-lg: 18px;
   --font-md: 16px;
   --font-sm: 14px;

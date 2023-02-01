@@ -1,6 +1,6 @@
-import { useCallback, useState } from "react";
+import { useCallback, useState } from 'react';
 
-import { getSubmittedFormData, defaultFormValidators } from "../../helpers";
+import { getSubmittedFormData, defaultFormValidators } from '../../helpers';
 
 export function useForm(args = {}) {
   const {
@@ -18,7 +18,7 @@ export function useForm(args = {}) {
 
   const validate = useCallback(
     (e) => {
-      const rawInputs = e.target.getElementsByTagName("input");
+      const rawInputs = e.target.getElementsByTagName('input');
       const inputs = Array.from(rawInputs);
 
       const allValidators = [...defaultFormValidators, ...validators];

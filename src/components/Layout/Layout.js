@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-import "./global.css";
-import * as styles from "./layout.module.css";
+import './global.css';
+import * as styles from './layout.module.css';
 
 export function Layout(props) {
   const { children } = props;

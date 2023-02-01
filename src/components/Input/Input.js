@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import * as styles from "./input.module.css";
+import * as styles from './input.module.css';
 
 export function Input(props) {
   const {

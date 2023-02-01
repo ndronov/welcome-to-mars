@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import { AUTO_CLOSE_TIMEOUT } from "./logic";
+import { AUTO_CLOSE_TIMEOUT } from './logic';
 
-import * as styles from "./toast.module.css";
+import * as styles from './toast.module.css';
 
 export function Toast(props) {
   const { message, kind, hide, onHide } = props;
